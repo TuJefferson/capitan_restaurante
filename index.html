@@ -105,8 +105,32 @@
         font-size: 9pt;
     }
     </style>
-    </head>
+
+<script>
+    //Variable que almacena el método window.open()
+    var miVentana;
+
+    //La función window_open crea el pop-up o ventana emergente
+    function window_open(){
+      miVentana = window.open( "http://01luisrene.com", "nombrePop-Up", "width=380,height=500, top=85,left=50");
+    }
     
+    //La función window_close cerrara el pop-up o ventana emergente
+    function window_close(){
+      miVentana.close();
+    }
+    
+    // Llamo a la función window_open en el evento click del botón con id = "botonWindowOpen"
+    document.getElementById("botonWindowOpen").onclick = function() {window_open()};
+
+    // Llamo a la función window_close en el evento click del botón con id = "botonWindowClose"
+    document.getElementById("botonWindowClose").onclick = function() {window_close()};
+  </script>
+
+
+    </head>
+ 
+
     <body style="color: #663300; background-color: #482400; margin-bottom: 0;" onload="FP_preloadImgs(/*url*/'imagenes/button23.jpg',/*url*/'imagenes/button24.jpg',/*url*/'imagenes/button12.jpg',/*url*/'imagenes/button13.jpg')" topmargin="0">
     
     <p>&nbsp;</p>
@@ -218,7 +242,21 @@
         
         </tbody></table>
     
+
+        <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+            <div class="modal-dialog">
+                 <div class="modal-content"> 
+                     <div class="modal-header"> <h3>Cabecera de la ventana</h3> </div> <div class="modal-body"> <h4>Texto de la ventana</h4> Mas texto en la ventana. 
+                    </div> 
+                    <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn btn-danger">Cerrar</a> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
     
-    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+        <script> $(document).ready(function() { $("#mostrarmodal").modal("show"); }); </script> 
     
     </body></html>
